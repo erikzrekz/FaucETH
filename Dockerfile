@@ -3,7 +3,7 @@ WORKDIR /home/gradle/src
 COPY --chown=gradle:gradle . /home/gradle/src
 RUN ./gradlew installDist
 
-FROM openjdk:8-jre-slim
+FROM eclipse-temurin:8-jre
 EXPOSE 8080
 WORKDIR /app
 COPY --from=build /home/gradle/src/build/install/src/ /app/
