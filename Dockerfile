@@ -1,4 +1,4 @@
-FROM gradle:jdk8 AS build
+FROM gradle:jdk11 AS build
 WORKDIR /home/gradle/src
 COPY --chown=gradle:gradle . /home/gradle/src
 RUN ./gradlew installDist
